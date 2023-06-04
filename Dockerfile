@@ -6,9 +6,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y make gcc
 
 ADD . /acwj
 WORKDIR /acwj/
-RUN make -f ./02_Parser/Makefile parser
-RUN make -f ./01_Scanner scanner/Makefile
-
+RUN make -C ./02_Parser/ parser
+RUN make -C ./01_Scanner/ scanner
 
 
 RUN mkdir -p /deps
